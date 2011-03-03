@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="MainBackground" Color="#FFA54242"/>
+
+    <Canvas x:Key="HandButtonContent" x:Shared="False" UseLayoutRounding="False" Width="62.7173" Height="66.3333" Clip="F1 M 0,0L 62.7173,0L 62.7173,66.3333L 0,66.3333L 0,0">
+        <Canvas x:Name="Layer_1" Width="640.115" Height="480.414" Canvas.Left="0" Canvas.Top="0">
+            <Path x:Name="Path" Width="62.7885" Height="32.3155" Canvas.Left="-0.071117" Canvas.Top="14" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="Transparent" Data="F1 M 0.88401,14.5C 0.88401,18.7222 -0.140026,23.0705 0.88401,27.1667C 2.18202,32.3587 7.01234,36.3302 11.5507,39.1667C 21.6513,45.4796 35.3285,47.3889 46.884,44.5C 51.7717,43.2781 55.5471,38.7723 58.2173,34.5C 61.2454,29.6551 62.2173,23.5466 62.2173,17.8334"/>
+            <Path x:Name="Path_0" Width="8.27101" Height="8.81956" Canvas.Left="22.1309" Canvas.Top="-0.180561" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="Transparent" Data="F1 M 24.2173,0.500008C 23.2923,0.863258 23.125,2.20252 22.884,3.16666C 22.6684,4.02903 22.443,5.06156 22.884,5.83335C 23.4353,6.79807 24.5103,7.44321 25.5507,7.83335C 26.383,8.14542 27.4777,8.32642 28.2173,7.83335C 29.0442,7.28208 29.3096,6.13084 29.5507,5.16666C 29.7663,4.30433 30.2196,3.08533 29.5507,2.50001C 28.1218,1.24973 25.9846,-0.193993 24.2173,0.500008 Z "/>
+            <Path x:Name="Path_1" Width="10.8879" Height="9.95896" Canvas.Left="34.1047" Canvas.Top="1.3204" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="Transparent" Data="F1 M 38.884,2.50001C 36.6784,2.77152 34.884,5.61112 34.884,7.83335C 34.884,8.72221 34.2555,9.87147 34.884,10.5C 35.5126,11.1285 36.6618,10.5 37.5507,10.5C 38.4396,10.5 39.3851,10.8121 40.2173,10.5C 41.2577,10.1099 42.1609,9.34364 42.884,8.50001C 43.5308,7.74546 43.9763,6.79749 44.2173,5.83335C 44.4329,4.97099 44.7104,3.90626 44.2173,3.16666C 43.6661,2.33976 42.5368,1.95658 41.5507,1.83335C 40.6415,1.7197 39.7934,2.38807 38.884,2.50001 Z "/>
+            <Path x:Name="Path_2" Width="23.3347" Height="21" Canvas.Left="27.4299" Canvas.Top="45.3334" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="Transparent" Data="F1 M 28.2173,45.8334C 28.2173,48.5 27.5706,51.2463 28.2173,53.8334C 29.8777,60.4747 38.0383,65.8334 44.884,65.8334C 50.9209,65.8334 52.2836,50.5331 46.884,47.8334"/>
+            <Path x:Name="Path_3" Width="5" Height="11.6667" Canvas.Left="35.7173" Canvas.Top="46" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="Transparent" Data="F1 M 36.2173,46.5C 37.1383,50.184 38.5191,53.7702 40.2173,57.1667"/>
+        </Canvas>
+    </Canvas>
+
+    <Style x:Key="SkinningSpikeButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="{StaticResource HandButtonContent}"/>
+    </Style>
+
+</ResourceDictionary>

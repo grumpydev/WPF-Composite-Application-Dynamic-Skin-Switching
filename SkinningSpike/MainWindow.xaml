@@ -1,0 +1,13 @@
+﻿<Window x:Class="SkinningSpike.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:ControlLibrary;assembly=ControlLibrary"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <controls:UserControl1/>
+        <StackPanel Width="200" Height="100" Orientation="Horizontal">
+            <Button x:Name="TestButton" Click="TestButton_Click" Width="100" Height="100">White</Button>
+            <Button x:Name="TestButton2" Click="TestButton2_Click" Width="100" Height="100">Normal</Button>
+        </StackPanel>
+    </Grid>
+</Window>

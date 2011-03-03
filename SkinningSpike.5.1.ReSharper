@@ -1,0 +1,20 @@
+<Configuration>
+  <CustomStructuralPatterns>
+    <Pattern Severity="DO_NOT_SHOW">
+      <ReplacePattern><![CDATA[Mock.Of<$moo$>()]]></ReplacePattern>
+      <SearchPattern><![CDATA[new Mock<$moo$>().Object]]></SearchPattern>
+      <Params />
+      <Placeholders>
+        <TypePlaceholder Name="moo" Type="System.Object" ExactType="False" />
+      </Placeholders>
+    </Pattern>
+    <Pattern Severity="DO_NOT_SHOW">
+      <ReplacePattern>new $Mock$Test</ReplacePattern>
+      <SearchPattern>new $Mock$</SearchPattern>
+      <Params />
+      <Placeholders>
+        <TypePlaceholder Name="Mock" Type="ControlLibrary.Mock&lt;T&gt;" ExactType="False" />
+      </Placeholders>
+    </Pattern>
+  </CustomStructuralPatterns>
+</Configuration>

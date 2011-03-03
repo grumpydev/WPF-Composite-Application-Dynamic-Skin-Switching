@@ -1,0 +1,26 @@
+﻿<Application x:Class="SkinningSpike.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             >
+    <Application.Resources>
+
+        <!--
+        This file isn't used by the application, but it "fools" Blend
+        into knowing where our styles our.
+        
+        Blend has the "please locate this style" dialog, which helps, 
+        but can be a bit cumbersome if you have a lot of resource dictionaries
+        so this trick can be useful.
+        
+        Have to watch for Blend updating the main App.Xaml, but it has a 
+        habit of doing that anyway (and breaking things).
+        -->
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/ControlResources--Normal.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
