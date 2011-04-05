@@ -7,25 +7,43 @@
 
     using Infrastructure.Messages;
 
+    using TinyMessenger;
+
     /// <summary>
     /// Provides a base class for module specific skin managers for making a module skinnable.
     /// </summary>
     public abstract class SkinManagerBase
     {
         /// <summary>
+        /// Rhe current resource manager
+        /// </summary>
+        private readonly IResourceManager resourceManager;
+
+        /// <summary>
         /// List of dictionaries that have been added with the ResourceManager
         /// </summary>
         private List<ResourceDictionary> dictionaries;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SkinManagerBase"/> class.
+        /// </summary>
+        /// <param name="messageHub">
+        /// The message hub.
+        /// </param>
+        /// <param name="resourceManager">
+        /// The resource manager.
+        /// </param>
+        protected SkinManagerBase(ITinyMessengerHub messageHub, IResourceManager resourceManager)
+        {
+            this.resourceManager = resourceManager;
+
+            messageHub.Subscribe<SkinUpdatedMessage>(m => this.SwitchSkin(m.Skin.ToString()));
+        }
+
+        /// <summary>
         /// Gets a collection of uri strings representing the "skinnable" dictionaries.
         /// </summary>
         protected abstract IEnumerable<string> BaseDictionaryUriStrings { get; }
-
-        /// <summary>
-        /// Gets the current resource manager;
-        /// </summary>
-        protected abstract IResourceManager ResourceManager { get; }
 
         /// <summary>
         /// Gets a delegate that expands the dictionary name (if necessary) to include the given skin.
@@ -43,7 +61,7 @@
         {
             this.dictionaries = new List<ResourceDictionary>(this.BaseDictionaryUriStrings.Count());
             this.dictionaries.AddRange(this.LoadDictionaries(skin.ToString()));
-            this.ResourceManager.SwitchDictionaries(null, this.dictionaries);
+            this.resourceManager.SwitchDictionaries(null, this.dictionaries);
         }
 
         /// <summary>
@@ -73,7 +91,7 @@
         protected void SwitchSkin(string newSkin)
         {
             var newDictionaries = this.LoadDictionaries(newSkin);
-            this.ResourceManager.SwitchDictionaries(this.dictionaries, newDictionaries);
+            this.resourceManager.SwitchDictionaries(this.dictionaries, newDictionaries);
             this.dictionaries.Clear();
             this.dictionaries.AddRange(newDictionaries);
         }
